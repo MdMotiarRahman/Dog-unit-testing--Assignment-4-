@@ -1,0 +1,7 @@
+### Dog API Test Collection
+@baseUrl = http://localhost:5000
+@contentType = application/json
+
+### TEST 1: Positive API Test - Get Random Dog
+GET {{baseUrl}}/api/dogs/random
+Content-Type: {{contentType}}
