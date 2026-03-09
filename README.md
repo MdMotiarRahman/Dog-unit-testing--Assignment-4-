@@ -1,14 +1,79 @@
-# Unit Testing Assignment - Dog API
+# Dog API Testing – Quick Guide
 
-This folder contains the server-side unit tests required for this assignment.
+## Project Structure
+server/
+├── src/
+│   ├── app.ts              # Express application
+│   ├── controllers/
+│   │   └── dogController.ts
+│   ├── routes/
+│   │   └── dogRoutes.ts
+│   └── services/
+│       └── dogService.ts
+├── tests/
+│   └── api.test.ts         # Test 1 & 2 (API tests)
+├── e2e/
+│   └── dogApp.spec.ts      # Test 3, 4, 5 (E2E tests)
+├── public/
+│   └── index.html          # Frontend application
+├── test.rest               # REST Client requests for manual testing
+├── vitest.config.ts        # Vitest configuration
+└── playwright.config.ts    # Playwright configuration
 
+## 1. Install Dependencies
 
-## Running Tests
+Run this first:
 
-From the project root:
-
-```bash
 cd server
 npm install
-npm test
-```
+
+## 2. Run API Tests
+
+Execute the backend tests:
+
+npm run test:run
+
+## 3. Run End-to-End Tests
+
+Run Playwright tests for the frontend:
+
+npm run test:e2e
+
+## 4. View Test Report
+
+npx playwright show-report
+
+## 5. Start the Server
+
+npm start
+
+Server runs at:
+http://localhost:5050
+
+## API Endpoints
+
+GET /api/dogs/random – Returns a random dog image (HTTPS URL)
+GET /api/health – Health check endpoint
+
+## Test Evidence
+REST Client (Test 1 & 2)
+Open test.rest in VS Code and click "Send Request" buttons:
+
+TEST 1: Click to see HTTP 200 response with success=true and imageUrl
+TEST 2: Click to see HTTP 404 error response
+## Playwright Report (Test 3, 4, 5)
+Run npx playwright show-report to view detailed E2E test results across Chromium, Firefox, and WebKit browsers
+
+## Browser Testing
+Visit http://localhost:5050 to manually test the frontend:
+
+Images load on page initialization
+Images load when clicking the "Load Random Dog" button
+Error message displays when API is unavailable
+## Dependencies
+Express.js - Web framework
+TypeScript - Type safety
+Vitest - Unit testing framework
+Supertest - HTTP assertion library
+Playwright - E2E testing framework
+TSX - TypeScript execution
