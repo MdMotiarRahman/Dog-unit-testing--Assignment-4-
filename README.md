@@ -1,25 +1,5 @@
 # Dog API Testing – Quick Guide
 
-## Project Structure
-server/
-├── src/
-│   ├── app.ts              # Express application
-│   ├── controllers/
-│   │   └── dogController.ts
-│   ├── routes/
-│   │   └── dogRoutes.ts
-│   └── services/
-│       └── dogService.ts
-├── tests/
-│   └── api.test.ts         # Test 1 & 2 (API tests)
-├── e2e/
-│   └── dogApp.spec.ts      # Test 3, 4, 5 (E2E tests)
-├── public/
-│   └── index.html          # Frontend application
-├── test.rest               # REST Client requests for manual testing
-├── vitest.config.ts        # Vitest configuration
-└── playwright.config.ts    # Playwright configuration
-
 ## 1. Install Dependencies
 
 Run this first:
